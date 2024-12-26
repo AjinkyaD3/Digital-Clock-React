@@ -1,0 +1,105 @@
+/* Background for the entire body */
+body {
+  background-image: url('./assets/image.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: 'Arial', sans-serif; /* A basic fallback font */
+}
+
+/* Clock container with a blur effect */
+.clock-container {
+  backdrop-filter: blur(5px); /* Blurs the background */
+  padding: 30px;
+  width: 100%;
+  max-width: 900px;  /* Prevents the clock from becoming too wide on larger screens */
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Soft shadow around the clock */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent background for visibility */
+}
+
+/* Digital clock styling */
+.clock {
+  color: white;
+  font-size: 8rem;  /* Responsive font size for different screen sizes */
+  font-weight: bold;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7); /* Soft shadow to enhance legibility */
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* Styling for the day of the week */
+.clock p {
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.8); /* Lighter color for the day */
+  margin-top: -15px;
+  font-weight: lighter;
+}
+
+/* Controls container */
+.controls {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 15px; /* Spacing between buttons */
+  flex-wrap: wrap; /* Allow buttons to stack on smaller screens */
+}
+
+/* Button styling */
+button {
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  display: inline-block; /* Ensure it's shown properly */
+  z-index: 1; /* Ensure the button is in front of other elements */
+}
+
+/* Button hover effect */
+button:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Focus outline */
+button:focus {
+  outline: none;
+  border: 2px solid #ff4081; /* Highlight border on focus */
+}
+
+/* Mobile responsiveness for the clock */
+@media (max-width: 600px) {
+  .clock {
+    font-size: 6rem; /* Smaller font size for small screens */
+  }
+
+  .clock-container {
+    padding: 20px;
+    width: 90%;
+  }
+
+  .controls {
+    flex-direction: column;
+    gap: 10px; /* Reduced space between buttons on smaller screens */
+  }
+
+  button {
+    padding: 12px 25px;
+    font-size: 1rem;
+  }
+}
